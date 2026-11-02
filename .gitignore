@@ -1,0 +1,42 @@
+# Secrets and private config
+.env
+.env.*
+!.env.example
+**/appsettings.Development.json
+**/appsettings.Production.json
+secrets.json
+*.pfx
+*.pem
+*.key
+
+# .NET
+**/bin/
+**/obj/
+.vs/
+*.user
+TestResults/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local / generated
+.idea/
+.vscode/
+.DS_Store
+coverage/
+htmlcov/
+*.log
+*.bak
+*.zip
+*.7z
+*.db
+*.sqlite
+
+# Research and industrial data: explicitly curate before tracking
+/data/
+/private/
+/research/raw-data/
