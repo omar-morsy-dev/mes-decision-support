@@ -2,8 +2,7 @@
 
 A research-led, open-source reference project for natural-language querying and constraint-based production rescheduling in Manufacturing Execution Systems (MES).
 
-> Status: foundation only. This repository does **not** yet contain a working MES or AI implementation.
-
+Status: .NET foundation implemented. Manufacturing workflows, AI features and production deployment are not yet implemented.
 ## Research goals
 
 1. Evaluate natural-language querying over MES data, comparing controlled tools and safe read-only Text-to-SQL.
@@ -19,15 +18,90 @@ A research-led, open-source reference project for natural-language querying and 
 
 See [project charter](docs/research/project-charter.md) and [architecture principles](docs/architecture/principles.md).
 
+
 ## Development
 
-The project currently has only foundation files. To validate locally:
+### Requirements
 
-```bash
-python3 scripts/check_foundation.py
+- .NET 10 SDK
+- Git
+- Python 3.12+ for repository foundation validation
+
+### Repository structure
+
+```text
+src/mes/
+  MES.Domain/          # Manufacturing domain model
+  MES.Application/     # Application contracts and use cases
+  MES.Infrastructure/  # Infrastructure implementations
+  MES.Api/             # ASP.NET Core API
+  MES.Web/             # Blazor frontend
+
+tests/
+  MES.Domain.Tests/
+  MES.Application.Tests/
+  MES.Api.Tests/
 ```
 
-CI runs the same check. Application build and test jobs will be added when their projects are introduced.
+### Restore and build
+
+```powershell
+dotnet restore src/mes/MES.slnx
+dotnet build src/mes/MES.slnx --configuration Release
+```
+
+### Run tests
+
+```powershell
+dotnet test src/mes/MES.slnx --configuration Release
+```
+
+### Run the API
+
+```powershell
+dotnet run --project src/mes/MES.Api
+```
+
+Available endpoints:
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /` | Basic API information |
+| `GET /health` | Application health |
+| `GET /api/v1/system/info` | Version and UTC timestamp |
+
+The API health endpoint currently reports application health
+only. It does not validate database or AI service availability.
+
+### Foundation validation
+
+```powershell
+python scripts/check_foundation.py
+```
+
+### Continuous integration
+
+GitHub Actions runs:
+
+- Repository foundation validation
+- .NET 10 dependency restoration
+- Release build with warnings treated as errors
+- Automated unit and API integration tests
+
+The .NET workflow runs on every pull request and on
+pushes to the `main` branch.
+
+### Current implementation status
+
+The repository contains the initial .NET solution, project
+references, infrastructure dependency injection, API endpoints,
+and automated foundation tests.
+
+Manufacturing domain logic, SQL Server persistence,
+authentication, AI services, production scheduling, and
+deployment are planned for subsequent milestones.
+
+
 
 ## Safety and data
 
