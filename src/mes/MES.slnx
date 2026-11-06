@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="../../tests/MES.Api.Tests/MES.Api.Tests.csproj" />
+  <Project Path="../../tests/MES.Application.Tests/MES.Application.Tests.csproj" />
+  <Project Path="../../tests/MES.Domain.Tests/MES.Domain.Tests.csproj" />
+  <Project Path="MES.Api/MES.Api.csproj" />
+  <Project Path="MES.Application/MES.Application.csproj" />
+  <Project Path="MES.Domain/MES.Domain.csproj" />
+  <Project Path="MES.Infrastructure/MES.Infrastructure.csproj" />
+  <Project Path="MES.Web/MES.Web.csproj" />
+</Solution>
