@@ -3,16 +3,9 @@ name: .NET CI
 
 on:
   push:
-    branches: [main]
-    paths:
-      - "src/mes/**"
-      - "tests/**"
-      - ".github/workflows/dotnet.yml"
+    branches:
+      - main
   pull_request:
-    paths:
-      - "src/mes/**"
-      - "tests/**"
-      - ".github/workflows/dotnet.yml"
 
 permissions:
   contents: read
@@ -23,27 +16,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "10.0.x"
 
-      - name: Restore
+      - name: Restore dependencies
         run: dotnet restore src/mes/MES.slnx
 
-      - name: Build
-        run: >
+      - name: Build solution
+        run: >-
           dotnet build src/mes/MES.slnx
           --configuration Release
           --no-restore
           --warnaserror
 
-      - name: Test
-        run: >
+      - name: Run automated tests
+        run: >-
           dotnet test src/mes/MES.slnx
           --configuration Release
           --no-build
           --no-restore
+          --verbosity normal
