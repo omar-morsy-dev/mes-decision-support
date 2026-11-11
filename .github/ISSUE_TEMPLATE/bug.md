@@ -6,7 +6,7 @@ about: Report incorrect behavior
 
 title: "fix: "
 
-labels: \["bug"]
+labels: ["bug"]
 
 ---
 
