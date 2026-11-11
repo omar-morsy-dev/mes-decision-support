@@ -1,4 +1,4 @@
-\---
+---
 
 name: Bug Report
 
@@ -8,46 +8,46 @@ title: "fix: "
 
 labels: \["bug"]
 
-\---
+---
 
 
 
-\## Problem
+## Problem
 
 
 
-\## Steps to Reproduce
+## Steps to Reproduce
 
-1\.
+1.
 
-2\.
+2.
 
-3\.
-
-
-
-\## Expected Behavior
+3.
 
 
 
-\## Actual Behavior
+## Expected Behavior
 
 
 
-\## Environment
+## Actual Behavior
 
 
 
-\## Severity and Impact
+## Environment
 
 
 
-\## Proposed Fix
+## Severity and Impact
 
 
 
-\## Regression Tests
+## Proposed Fix
 
-\- \[ ] Regression test added
 
-\- \[ ] Related tests pass
+
+## Regression Tests
+
+- [ ] Regression test added
+
+- [ ] Related tests pass
