@@ -1,22 +1,22 @@
-\## Summary
+## Summary
 
 Describe the changes.
 
 
 
-\## Motivation
+## Motivation
 
 Why is this change needed?
 
 
 
-\## Linked Issue
+## Linked Issue
 
 Closes #
 
 
 
-\## Architecture Impact
+## Architecture Impact
 
 Describe changes to boundaries, dependencies,
 
@@ -24,32 +24,32 @@ domain contracts, or data models.
 
 
 
-\## Tests Performed
+## Tests Performed
 
-\- \[ ] Unit tests
+- [ ] Unit tests
 
-\- \[ ] Integration tests (if applicable)
+- [ ] Integration tests (if applicable)
 
-\- \[ ] Local build
+- [ ] Local build
 
-\- \[ ] CI checks
+- [ ] CI checks
 
 
 
-\## Known Limitations
+## Known Limitations
 
 Document anything intentionally deferred.
 
 
 
-\## Review Checklist
+## Review Checklist
 
-\- \[ ] Acceptance criteria satisfied
+- [ ] Acceptance criteria satisfied
 
-\- \[ ] No unrelated changes
+- [ ] No unrelated changes
 
-\- \[ ] No secrets or sensitive data committed
+- [ ] No secrets or sensitive data committed
 
-\- \[ ] Documentation updated
+- [ ] Documentation updated
 
-\- \[ ] Breaking changes identified
+- [ ] Breaking changes identified
