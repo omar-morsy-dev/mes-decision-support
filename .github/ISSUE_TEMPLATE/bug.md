@@ -51,6 +51,3 @@ labels: \["bug"]
 \- \[ ] Regression test added
 
 \- \[ ] Related tests pass
-
-
-

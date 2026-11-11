@@ -53,6 +53,3 @@ Document anything intentionally deferred.
 \- \[ ] Documentation updated
 
 \- \[ ] Breaking changes identified
-
-
-

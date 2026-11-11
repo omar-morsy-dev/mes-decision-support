@@ -83,6 +83,3 @@ Significant decisions are documented under docs/adr.
 Each ADR includes context, decision, alternatives,
 
 consequences and status.
-
-
-
