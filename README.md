@@ -2,7 +2,10 @@
 
 A research-led, open-source reference project for natural-language querying and constraint-based production rescheduling in Manufacturing Execution Systems (MES).
 
-Status: .NET foundation implemented. Manufacturing workflows, AI features and production deployment are not yet implemented.
+**Status:** Foundation implementation in progress.
+Manufacturing workflows, AI features, and production
+deployment are not yet implemented.
+
 ## Research goals
 
 1. Evaluate natural-language querying over MES data, comparing controlled tools and safe read-only Text-to-SQL.
@@ -102,6 +105,35 @@ authentication, AI services, production scheduling, and
 deployment are planned for subsequent milestones.
 
 
+
+## Engineering process
+
+Development follows an issue-driven workflow with
+two-week sprint planning and short-lived branches.
+
+Each functional change should have:
+- A linked GitHub Issue
+- Testable acceptance criteria
+- Appropriate automated tests
+- A documented Pull Request
+- Successful required CI checks
+- A structured self-review
+
+See [Engineering Standards](docs/process/engineering-standards.md).
+
+Significant architectural decisions are documented
+under [docs/adr](docs/adr).
+
+Manufacturing domain development is currently planned
+under the Manufacturing Domain epic.
+
+## Application status
+
+The Blazor application currently presents project
+information only.
+
+Production execution and AI decision-support interfaces
+have not yet been implemented.
 
 ## Safety and data
 
