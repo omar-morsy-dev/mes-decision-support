@@ -17,10 +17,31 @@ if missing:
 
 # Scan tracked files only. This is a guardrail, not a complete secret scanner.
 result = subprocess.run(['git', 'ls-files'], cwd=ROOT, capture_output=True, text=True)
-if result.returncode == 0:
-    paths = result.stdout.splitlines()
-    bad = [p for p in paths if Path(p).name == '.env' or p.startswith(('private/', 'research/raw-data/')) or '/bin/' in f'/{p}' or '/obj/' in f'/{p}']
-    if bad:
-        print('Forbidden tracked paths:', ', '.join(bad), file=sys.stderr)
-        sys.exit(1)
+
+if result.returncode != 0:
+    print(
+        "Failed to inspect tracked repository files:",
+        result.stderr,
+        file=sys.stderr,
+    )
+    sys.exit(result.returncode)
+
+paths = result.stdout.splitlines()
+
+bad = [
+    p for p in paths
+    if Path(p).name == '.env'
+    or p.startswith(('private/', 'research/raw-data/'))
+    or '/bin/' in f'/{p}'
+    or '/obj/' in f'/{p}'
+]
+
+if bad:
+    print(
+        'Forbidden tracked paths:',
+        ', '.join(bad),
+        file=sys.stderr,
+    )
+    sys.exit(1)
+
 print('Foundation checks passed (file presence and tracked path guard).')
